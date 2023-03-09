@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git
+  #    active: native #reading from file system
+  cloud:
+    config:
+      server:
+#        native:
+#          search-locations: classpath:/config
+        git:
+          uri: https://github.com/Rostik777/ticketing-project-microservices-config
+          default-label: master
+          username: Rostik777
+          password: '{cipher}283973a42495b4088f2cef186642300955d806a06d2ba6b9fbe8f7189067e32624f297ee375dd70ccb4cf295a2f9f568ad23899d2e96fc2a46ae4b936d613237'
+      fail-fast: true
+
+encrypt:
+  key: cydeo
+
+server:
+  port: 8888
